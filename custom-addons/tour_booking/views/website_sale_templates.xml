@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="product_tour_booking" inherit_id="website_sale.product">
+        <xpath expr="//div[@id='product_details']" position="inside">
+            <t t-if="product.es_tour">
+                <div class="form-group">
+                    <label for="fecha_reserva">Fecha de Reserva</label>
+                    <input type="date" class="form-control" name="fecha_reserva" required="required"/>
+                </div>
+                <div class="form-group">
+                    <label for="cantidad_personas">Cantidad de Personas</label>
+                    <input type="number" class="form-control" name="cantidad_personas" min="1" value="1" required="required"/>
+                </div>
+            </t>
+        </xpath>
+        <xpath expr="//button[@type='submit']" position="attributes">
+            <attribute name="t-if">not product.es_tour</attribute>
+        </xpath>
+        <xpath expr="//button[@type='submit']" position="after">
+            <button type="submit" class="btn btn-primary" t-if="product.es_tour">Reservar Tour</button>
+        </xpath>
+    </template>
+</odoo>

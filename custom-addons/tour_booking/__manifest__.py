@@ -2,14 +2,22 @@
 {
     "name": "tour booking",
     "version": "1.0",
-    "category": "website",
-    "summary": "modulo para reservas de tours turisticos",
+    "category": "Website",
+    "summary": "Módulo para reservas de tours turísticos",
     "description": """
-        permite la venta de tours turisticos desde el sitio web,
-        con seleccion de fecha y cantidad de personas.
+        Permite la venta de tours turísticos desde el sitio web,
+        con selección de fecha y cantidad de personas.
     """,
-    "depends": ["website", "website_sale", "product", "sale_management", "payment", "account"],
+    "depends": [
+        "website",
+        "website_sale",
+        "product",
+        "sale_management",
+        "payment",
+        "account",
+    ],
     "data": [
+        "security/ir.model.access.csv",
         "views/product_template_views.xml",
         "views/sale_order_views.xml",
         "views/website_sale_templates.xml",
